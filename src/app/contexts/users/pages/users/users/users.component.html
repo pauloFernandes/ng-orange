@@ -1,0 +1,9 @@
+<p>
+  users works!
+</p>
+
+<ul>
+  <li *ngFor="let user of list | async">
+    {{ user | json }}
+  </li>
+</ul>
