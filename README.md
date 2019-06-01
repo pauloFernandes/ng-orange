@@ -1,27 +1,29 @@
 # NgOrange
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
+Este projeto tem como propósito testar o desenvolvimento de uma aplicação com Angular, especificamente em sua versão 6.
 
-## Development server
+Para este propósito, estamos utilizando como pano de fundo as funções administraticas do app [Orange](https://git.rarolabs.com.br/paulo/orange), ferramenta de automação de atividades rotineiras de alguns desenvolvedores da Raro.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Este protótipo deverá lidar com as telas de gestão dos seguintes recursos do Orange:
+- Usuários
+- Toggl: gestão de projetos;
+- Slack: contas de usuários;
+- Gitlab: Dados de integração com os projetos dos usuários
 
-## Code scaffolding
+## Usuários
+- Listagem de usuários, com atualização em tempo real com os dados do firebase;
+- Inclusão de novos usuários;
+- Formulário de alteração de usuários;
+  - Este poderá ser alterado através de uma interface de atualização na própria listagem de itens desta tela
+- Pesquisa de usuários
+- Navegação para os demais recursos, que são todos subitens de usuários
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Projetos no Toggl
+- Crud de cadastro e gestão de projetos do usuário;
+- Importação de projetos do toggl?
 
-## Build
+## Slack
+- Gestão do cadastro do usuário no slack;
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Gitlab
+- Cadastro de usuários no Gitlab
