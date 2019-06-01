@@ -10,9 +10,9 @@ import User from '../../../shared/user';
 })
 export class UsersComponent {
 
-  list: Observable<Array<User>>
+  users: Observable<Array<User>>
   constructor(private usersService:UsersService) {
-    this.list = this.usersService.list();
+    this.users = this.usersService.list();
   }
 
 }

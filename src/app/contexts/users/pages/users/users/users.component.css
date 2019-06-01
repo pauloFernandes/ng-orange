@@ -1,0 +1,8 @@
+.title-group {
+  display: flex;
+  align-items: center;
+}
+
+.title-group .title {
+  width: 95%;
+}

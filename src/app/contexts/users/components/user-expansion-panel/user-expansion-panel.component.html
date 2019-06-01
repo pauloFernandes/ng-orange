@@ -1,0 +1,15 @@
+<mat-expansion-panel [class.mat-elevation-z4]="true">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      <mat-checkbox [checked]="user.active">{{ user?.name }}</mat-checkbox>
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <form class="example-form">
+      <mat-form-field class="full-sized-input">
+          <input matInput placeholder="Toggl Token" [value]="user?.togglToken">
+      </mat-form-field>
+    </form>
+
+  <button mat-raised-button [color]="'primary'">Salvar</button>
+</mat-expansion-panel>
