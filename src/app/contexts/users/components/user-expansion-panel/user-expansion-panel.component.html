@@ -1,0 +1,40 @@
+<mat-expansion-panel [class.mat-elevation-z4]="true">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      <mat-checkbox
+        #isUserActive
+        appDebounceClick
+        [checked]="user.active"
+        (debounceClick)="onClickActiveChekbox(isUserActive)"
+      >{{ user?.name }}</mat-checkbox>
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <form class="example-form">
+      <mat-form-field class="full-sized-input">
+          <input #togglToken matInput placeholder="Toggl Token" [value]="user?.togglToken">
+      </mat-form-field>
+    </form>
+
+  <div class="actions">
+    <button
+      mat-raised-button
+      [color]="'primary'"
+      (click)="onSaveClicked(togglToken.value)"
+    >Salvar</button>
+
+    <button
+      mat-button
+      mat-raised-button
+      (click)="removeUser(user?.key)"
+    >Remover</button>
+
+    <button mat-button mat-raised-button  [matMenuTriggerFor]="menu">Opções</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Toggl</button>
+      <button mat-menu-item>Slack</button>
+      <button mat-menu-item>Gitlab</button>
+    </mat-menu>
+  </div>
+
+</mat-expansion-panel>

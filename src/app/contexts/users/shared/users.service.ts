@@ -19,4 +19,20 @@ export class UsersService {
         map(values => Object.keys(values).map(key => ({ ...values[key], key }))),
       );
   }
+
+  create(user: User): Promise<void> {
+    const key = this.db.database.ref('users').push().key;
+    return this.db.object(`users/${key}`).set(user);
+  }
+
+  update(user: User):Promise<any> {
+    const { key, ...userToUpdate } = user;
+    return this.db
+      .object(`users/${key}`)
+      .update(userToUpdate);
+  }
+
+  remove(key: String): Promise<void> {
+    return this.db.object(`users/${key}`).remove();
+  }
 }

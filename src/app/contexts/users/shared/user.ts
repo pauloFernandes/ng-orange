@@ -1,5 +1,5 @@
 export default interface User {
-  key: String;
+  key?: String;
   active: Boolean;
   name: String;
   togglToken: String;
