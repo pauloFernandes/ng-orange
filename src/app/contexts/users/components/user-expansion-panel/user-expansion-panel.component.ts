@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import User from '../../shared/user';
 import { MatExpansionPanelHeader, MatExpansionPanelTitle, MatExpansionPanelDescription, MatFormField, MatExpansionPanel } from '@angular/material';
 
@@ -16,4 +16,17 @@ import { MatExpansionPanelHeader, MatExpansionPanelTitle, MatExpansionPanelDescr
 })
 export class UserExpansionPanelComponent {
   @Input() user:User;
+  @Output() toggleUserActive = new EventEmitter<User>();
+  @Output() onSave = new EventEmitter<User>();
+
+  onSaveClicked(togglToken: String): void {
+    this.user.togglToken = togglToken;
+    this.onSave.emit(this.user);
+  }
+
+  onClickActiveChekbox(input): void {
+    const isChecked: boolean = input.checked;
+    this.user.active = isChecked;
+    this.toggleUserActive.emit(this.user);
+  }
 }
