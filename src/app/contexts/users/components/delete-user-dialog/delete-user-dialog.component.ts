@@ -3,18 +3,18 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import User from '../../shared/user';
 
 @Component({
-  selector: 'app-new-user-dialog',
-  templateUrl: './new-user-dialog.component.html',
-  styleUrls: ['./new-user-dialog.component.css']
+  selector: 'app-delete-user-dialog',
+  templateUrl: './delete-user-dialog.component.html',
+  styleUrls: ['./delete-user-dialog.component.css']
 })
-export class NewUserDialogComponent {
+export class DeleteUserDialogComponent {
 
   constructor(
-    public dialogRef:MatDialogRef<NewUserDialogComponent>,
+    public dialogRef:MatDialogRef<DeleteUserDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public user:User
   ) { }
 
-  onClick(): void {
+  onRemove(): void {
     this.dialogRef.close(this.user);
   }
 

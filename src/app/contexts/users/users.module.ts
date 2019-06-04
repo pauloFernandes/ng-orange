@@ -12,9 +12,10 @@ import { UserExpansionPanelComponent } from './components/user-expansion-panel/u
 import { NewUserDialogComponent } from './components/new-user-dialog/new-user-dialog.component';
 import { FormsModule } from '@angular/forms';
 import { UiModule } from 'src/app/shared/ui/ui.module';
+import { DeleteUserDialogComponent } from './components/delete-user-dialog/delete-user-dialog.component';
 
 @NgModule({
-  declarations: [UsersComponent, UserExpansionPanelComponent, NewUserDialogComponent],
+  declarations: [UsersComponent, UserExpansionPanelComponent, NewUserDialogComponent, DeleteUserDialogComponent],
   exports: [
     UsersComponent,
   ],
@@ -28,7 +29,7 @@ import { UiModule } from 'src/app/shared/ui/ui.module';
     ThemingModule,
     UiModule,
   ],
-  entryComponents: [NewUserDialogComponent],
+  entryComponents: [NewUserDialogComponent, DeleteUserDialogComponent],
   bootstrap: [UsersComponent]
 })
 export class UsersModule { }

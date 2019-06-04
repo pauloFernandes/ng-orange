@@ -31,4 +31,8 @@ export class UsersService {
       .object(`users/${key}`)
       .update(userToUpdate);
   }
+
+  remove(key: String): Promise<void> {
+    return this.db.object(`users/${key}`).remove();
+  }
 }

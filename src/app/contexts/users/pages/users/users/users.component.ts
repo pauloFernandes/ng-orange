@@ -4,6 +4,7 @@ import { UsersService } from '../../../shared/users.service';
 import User from '../../../shared/user';
 import { MatDialog } from '@angular/material';
 import { NewUserDialogComponent } from '../../../components/new-user-dialog/new-user-dialog.component';
+import { DeleteUserDialogComponent } from '../../../components/delete-user-dialog/delete-user-dialog.component';
 
 @Component({
   selector: 'app-users',
@@ -34,6 +35,17 @@ export class UsersComponent {
 
   update(user: User) {
     return this.usersService.update(user);
+  }
+
+  confirmRemove(key:String) {
+    const dialogRef = this.dialog.open(DeleteUserDialogComponent, {
+      width: '400px',
+      data: { active: true, name: '', togglToken: '' }
+    });
+
+    dialogRef.afterClosed().subscribe(() => {
+      return this.usersService.remove(key);
+    })
   }
 
 }

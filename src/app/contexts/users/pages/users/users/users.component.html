@@ -15,6 +15,7 @@
         appDebounceClick
         (toggleUserActive)="update($event)"
         (onSave)="update($event)"
+        (onRemove)="confirmRemove($event)"
         *ngFor="let user of users | async"
         [user]="user">
       </app-user-expansion-panel>

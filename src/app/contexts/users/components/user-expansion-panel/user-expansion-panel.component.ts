@@ -18,6 +18,11 @@ export class UserExpansionPanelComponent {
   @Input() user:User;
   @Output() toggleUserActive = new EventEmitter<User>();
   @Output() onSave = new EventEmitter<User>();
+  @Output() onRemove = new EventEmitter<String>();
+
+  removeUser(key: String) {
+    this.onRemove.emit(key);
+  }
 
   onSaveClicked(togglToken: String): void {
     this.user.togglToken = togglToken;
