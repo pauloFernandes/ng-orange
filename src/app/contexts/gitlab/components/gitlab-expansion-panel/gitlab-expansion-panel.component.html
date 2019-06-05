@@ -1,0 +1,36 @@
+<mat-expansion-panel [class.mat-elevation-z4]="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ project?.key }}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <form class="form">
+      <mat-form-field class="full-sized-input">
+        <input #api_token matInput placeholder="API Token" [value]="project?.api_token">
+      </mat-form-field>
+
+      <mat-form-field class="full-sized-input">
+        <input #project_id matInput placeholder="Project Id" [value]="project?.project_id">
+      </mat-form-field>
+
+      <mat-form-field class="full-sized-input">
+        <input #url matInput placeholder="Project URL" [value]="project?.url">
+      </mat-form-field>
+    </form>
+
+    <div class="actions">
+      <button
+        mat-raised-button
+        [color]="'primary'"
+        (click)="onSaveClicked(api_token.value)"
+      >Salvar</button>
+
+      <button
+        mat-button
+        mat-raised-button
+        (click)="removeProject(project?.key)"
+      >Remover</button>
+    </div>
+
+  </mat-expansion-panel>

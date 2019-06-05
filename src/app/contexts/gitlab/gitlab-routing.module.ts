@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { GitlabComponent } from './gitlab/gitlab.component';
+import { GitlabComponent } from './pages/gitlab/gitlab.component';
 
 const routes: Routes = [
   {

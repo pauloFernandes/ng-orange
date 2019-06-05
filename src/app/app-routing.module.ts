@@ -7,6 +7,10 @@ const routes: Routes = [
     loadChildren: () => import('./contexts/users/users.module').then(mod => mod.UsersModule)
   },
   {
+    path: 'users/:userId/gitlab',
+    loadChildren: () => import('./contexts/gitlab/gitlab.module').then(mod => mod.GitlabModule)
+  },
+  {
     path: 'gitlab',
     loadChildren: () => import('./contexts/gitlab/gitlab.module').then(mod => mod.GitlabModule)
   }
