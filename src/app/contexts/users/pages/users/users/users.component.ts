@@ -15,6 +15,7 @@ export class UsersComponent {
 
   users: Observable<Array<User>>
   constructor(private usersService:UsersService, public dialog: MatDialog) {
+    this.usersService.initializePath('users');
     this.users = this.usersService.list();
   }
 

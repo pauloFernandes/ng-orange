@@ -27,7 +27,8 @@ export class GitlabComponent implements OnInit {
     this.projects = this.route.paramMap.pipe(
       switchMap((params: ParamMap) => {
         this.userId = params.get('userId')
-        return this.gitlabService.list(this.userId)
+        this.gitlabService.initializePath(`gitlab/projects/${this.userId}`);
+        return this.gitlabService.list();
       }),
     );
   }
@@ -45,11 +46,11 @@ export class GitlabComponent implements OnInit {
   }
 
   create(project: GitlabProject) {
-    return this.gitlabService.create(this.userId, project);
+    return this.gitlabService.create(project);
   }
 
   saveProject(project) {
-    return this.gitlabService.update(this.userId, project);
+    return this.gitlabService.update(project);
   }
 
   confirmRemoveProject(key:String):void {
@@ -59,8 +60,8 @@ export class GitlabComponent implements OnInit {
         data: { }
       })
       .afterClosed()
-      .subscribe(() => {
-        return this.gitlabService.remove(this.userId, key);
+      .subscribe(shouldRemove => {
+        return shouldRemove && this.gitlabService.remove(key);
       });
   }
 }
