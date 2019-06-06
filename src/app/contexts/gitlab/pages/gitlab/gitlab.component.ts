@@ -40,7 +40,7 @@ export class GitlabComponent implements OnInit {
       })
       .afterClosed()
       .subscribe((project: GitlabProject) => {
-        return this.create(project);
+        return this.saveProject(project);
       })
   }
 
@@ -49,7 +49,7 @@ export class GitlabComponent implements OnInit {
   }
 
   saveProject(project) {
-    console.log(project);
+    return this.gitlabService.update(this.userId, project);
   }
 
   confirmRemoveProject(key:String):void {
@@ -62,9 +62,5 @@ export class GitlabComponent implements OnInit {
       .subscribe(() => {
         return this.gitlabService.remove(this.userId, key);
       });
-  }
-
-  removeProject(project) {
-    console.log(project);
   }
 }

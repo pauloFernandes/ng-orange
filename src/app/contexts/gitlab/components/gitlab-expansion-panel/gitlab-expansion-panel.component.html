@@ -5,32 +5,32 @@
       </mat-panel-title>
     </mat-expansion-panel-header>
 
-    <form class="form">
+    <form [formGroup]="projectForm" (ngSubmit)="onSaveClicked()">
       <mat-form-field class="full-sized-input">
-        <input #api_token matInput placeholder="API Token" [value]="project?.api_token">
+        <input matInput placeholder="API Token" formControlName="api_token">
       </mat-form-field>
 
       <mat-form-field class="full-sized-input">
-        <input #project_id matInput placeholder="Project Id" [value]="project?.project_id">
+        <input matInput placeholder="Project Id" formControlName="project_id">
       </mat-form-field>
 
       <mat-form-field class="full-sized-input">
-        <input #url matInput placeholder="Project URL" [value]="project?.url">
+        <input matInput placeholder="Project URL" formControlName="url">
       </mat-form-field>
+
+      <div class="actions">
+        <button
+          type="submit"
+          mat-raised-button
+          [color]="'primary'"
+        >Salvar</button>
+
+        <button
+          mat-button
+          mat-raised-button
+          (click)="removeProject(project?.key)"
+        >Remover</button>
+      </div>
     </form>
-
-    <div class="actions">
-      <button
-        mat-raised-button
-        [color]="'primary'"
-        (click)="onSaveClicked(api_token.value)"
-      >Salvar</button>
-
-      <button
-        mat-button
-        mat-raised-button
-        (click)="removeProject(project?.key)"
-      >Remover</button>
-    </div>
 
   </mat-expansion-panel>
