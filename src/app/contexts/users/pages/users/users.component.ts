@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { UsersService } from '../../../shared/users.service';
-import User from '../../../../../shared/interfaces/User';
+import User from 'src/app/shared/interfaces/User';
+import { UsersService } from '../../shared/users.service';
 import { MatDialog } from '@angular/material';
-import { NewUserDialogComponent } from '../../../components/new-user-dialog/new-user-dialog.component';
-import { DeleteUserDialogComponent } from '../../../components/delete-user-dialog/delete-user-dialog.component';
+import { NewUserDialogComponent } from '../../components/new-user-dialog/new-user-dialog.component';
+import { DeleteUserDialogComponent } from '../../components/delete-user-dialog/delete-user-dialog.component';
 
 @Component({
   selector: 'app-users',
