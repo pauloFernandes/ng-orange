@@ -1,23 +1,6 @@
 <h2 mat-dialog-title>Novo Projeto</h2>
 <div mat-dialog-content>
-
-  <form [formGroup]="projectForm" (ngSubmit)="onClick()" class="project-form">
-    <mat-form-field class="full-sized-input">
-      <input matInput placeholder="Project key" formControlName="key">
-    </mat-form-field>
-
-    <mat-form-field class="full-sized-input">
-      <input matInput placeholder="API Token" formControlName="api_token">
-    </mat-form-field>
-
-    <mat-form-field class="full-sized-input">
-      <input matInput placeholder="Project Id" formControlName="project_id">
-    </mat-form-field>
-
-    <mat-form-field class="full-sized-input">
-      <input matInput placeholder="Project URL" formControlName="url">
-    </mat-form-field>
-  </form>
+  <app-gitlab-form [projectForm]="projectForm"></app-gitlab-form>
 </div>
 
 <div mat-dialog-actions>

@@ -4,33 +4,20 @@
         {{ project?.key }}
       </mat-panel-title>
     </mat-expansion-panel-header>
+    <app-gitlab-form [projectForm]="projectForm"></app-gitlab-form>
 
-    <form [formGroup]="projectForm" (ngSubmit)="onSaveClicked()">
-      <mat-form-field class="full-sized-input">
-        <input matInput placeholder="API Token" formControlName="api_token">
-      </mat-form-field>
+    <div class="actions">
+      <button
+        (click)="onSaveClicked()"
+        mat-raised-button
+        [color]="'primary'"
+      >Salvar</button>
 
-      <mat-form-field class="full-sized-input">
-        <input matInput placeholder="Project Id" formControlName="project_id">
-      </mat-form-field>
-
-      <mat-form-field class="full-sized-input">
-        <input matInput placeholder="Project URL" formControlName="url">
-      </mat-form-field>
-
-      <div class="actions">
-        <button
-          type="submit"
-          mat-raised-button
-          [color]="'primary'"
-        >Salvar</button>
-
-        <button
-          mat-button
-          mat-raised-button
-          (click)="removeProject(project?.key)"
-        >Remover</button>
-      </div>
-    </form>
+      <button
+        mat-button
+        mat-raised-button
+        (click)="removeProject(project?.key)"
+      >Remover</button>
+    </div>
 
   </mat-expansion-panel>
