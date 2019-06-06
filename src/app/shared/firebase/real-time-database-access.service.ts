@@ -19,7 +19,7 @@ export class RealTimeDatabaseAccessService<T> {
       .object(this.basePath)
       .valueChanges()
       .pipe(
-        map(values => Object.keys(values).map(key => ({ ...values[key], key }))),
+        map(values => Object.keys(values || {}).map(key => ({ ...values[key], key }))),
       );
   }
 

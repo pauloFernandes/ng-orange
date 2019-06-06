@@ -9,18 +9,13 @@
       >{{ user?.name }}</mat-checkbox>
     </mat-panel-title>
   </mat-expansion-panel-header>
-
-  <form class="example-form">
-      <mat-form-field class="full-sized-input">
-          <input #togglToken matInput placeholder="Toggl Token" [value]="user?.togglToken">
-      </mat-form-field>
-    </form>
+  <app-user-form [userForm]="userForm"></app-user-form>
 
   <div class="actions">
     <button
       mat-raised-button
       [color]="'primary'"
-      (click)="onSaveClicked(togglToken.value)"
+      (click)="onSaveClicked()"
     >Salvar</button>
 
     <button
