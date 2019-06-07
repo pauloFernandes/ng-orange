@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +21,15 @@ export class RealTimeDatabaseAccessService<T> {
       .pipe(
         map(values => Object.keys(values || {}).map(key => ({ ...values[key], key }))),
       );
+  }
+
+  get(key: String): Observable<{}> {
+    return this.db
+      .object(`${this.basePath}/${key}`)
+      .valueChanges()
+      .pipe(
+        map(values => ({ ...values, key }))
+      )
   }
 
   create(entity:T): Promise<void> {

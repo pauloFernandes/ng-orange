@@ -1,0 +1,17 @@
+<mat-card [class.mat-elevation-z4]="true">
+  <mat-card-title>
+    <div class="title-group">
+      <div class="title">
+        Canais de Comunicação
+      </div>
+    </div>
+  </mat-card-title>
+  <mat-accordion>
+    <mat-card-content>
+        <app-channels-form
+          [slackForm]="slackForm"
+          (onSave)="save($event)"
+        ></app-channels-form>
+    </mat-card-content>
+  </mat-accordion>
+</mat-card>

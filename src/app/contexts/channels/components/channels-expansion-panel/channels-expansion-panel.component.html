@@ -1,0 +1,23 @@
+<mat-expansion-panel [class.mat-elevation-z4]="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ project?.key }}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <app-channels-form [slackForm]="slackForm"></app-channels-form>
+
+    <div class="actions">
+      <button
+        (click)="onSaveClicked()"
+        mat-raised-button
+        [color]="'primary'"
+      >Salvar</button>
+
+      <button
+        mat-button
+        mat-raised-button
+        (click)="removeProject(project?.key)"
+      >Remover</button>
+    </div>
+
+  </mat-expansion-panel>
