@@ -11,9 +11,10 @@ const routes: Routes = [
     loadChildren: () => import('./contexts/gitlab/gitlab.module').then(mod => mod.GitlabModule)
   },
   {
-    path: 'gitlab',
-    loadChildren: () => import('./contexts/gitlab/gitlab.module').then(mod => mod.GitlabModule)
-  }
+    path: 'users/:userId/toggl',
+    loadChildren: () => import('./contexts/toggl/toggl.module').then(mod => mod.TogglModule)
+  },
+
 ];
 
 @NgModule({
