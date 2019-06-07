@@ -1,6 +1,7 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
-import User from '../../shared/user';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import User from '../../../../shared/interfaces/User';
 import { MatExpansionPanelHeader, MatExpansionPanelTitle, MatExpansionPanelDescription, MatFormField, MatExpansionPanel } from '@angular/material';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-user-expansion-panel',
@@ -14,19 +15,28 @@ import { MatExpansionPanelHeader, MatExpansionPanelTitle, MatExpansionPanelDescr
     MatFormField
   ]
 })
-export class UserExpansionPanelComponent {
+export class UserExpansionPanelComponent implements OnInit {
   @Input() user:User;
   @Output() toggleUserActive = new EventEmitter<User>();
   @Output() onSave = new EventEmitter<User>();
   @Output() onRemove = new EventEmitter<String>();
+  userForm = new FormGroup({
+    key: new FormControl(''),
+    active: new FormControl(true),
+    name: new FormControl(''),
+    togglToken: new FormControl(''),
+  });
+
+  ngOnInit() {
+    this.userForm.patchValue(this.user);
+  }
 
   removeUser(key: String) {
     this.onRemove.emit(key);
   }
 
-  onSaveClicked(togglToken: String): void {
-    this.user.togglToken = togglToken;
-    this.onSave.emit(this.user);
+  onSaveClicked():void {
+    this.onSave.emit(this.userForm.value);
   }
 
   onClickActiveChekbox(input): void {

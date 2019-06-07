@@ -3,7 +3,7 @@
     <div class="title-group">
       <div class="title">Usuários</div>
       <div class="actions">
-        <button mat-mini-fab [color]="'primary'" aria-label="Adicionar usuários" (click)="openDialogForm()">
+        <button mat-mini-fab [color]="'primary'" aria-label="Adicionar usuários" (click)="newUser()">
           <mat-icon>add</mat-icon>
         </button>
       </div>
@@ -13,10 +13,10 @@
     <mat-card-content>
       <app-user-expansion-panel
         appDebounceClick
-        (toggleUserActive)="update($event)"
+        *ngFor="let user of users | async"
         (onSave)="update($event)"
         (onRemove)="confirmRemove($event)"
-        *ngFor="let user of users | async"
+        (toggleUserActive)="update($event)"
         [user]="user">
       </app-user-expansion-panel>
     </mat-card-content>

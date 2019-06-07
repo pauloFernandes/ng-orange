@@ -1,0 +1,25 @@
+<mat-card [class.mat-elevation-z4]="true">
+  <mat-card-title>
+    <div class="title-group">
+      <div class="title">
+        Gitlab Projects
+      </div>
+      <div class="actions">
+        <button mat-mini-fab [color]="'primary'" aria-label="Adicionar Projetos" (click)="new()">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+    </div>
+  </mat-card-title>
+  <mat-accordion>
+    <mat-card-content>
+      <app-gitlab-expansion-panel
+        *ngFor="let project of projects | async"
+        (onSave)="saveProject($event)"
+        (onRemove)="confirmRemoveProject($event)"
+        [project]="project"
+      >
+      </app-gitlab-expansion-panel>
+    </mat-card-content>
+  </mat-accordion>
+</mat-card>

@@ -1,16 +1,6 @@
 <h2 mat-dialog-title>Novo Usuário</h2>
 <div mat-dialog-content>
-  <div class="user-form">
-    <label>Nome</label>
-    <mat-form-field>
-      <input matInput [(ngModel)]="user.name">
-    </mat-form-field>
-
-    <label>Toggl Token</label>
-    <mat-form-field>
-      <input matInput [(ngModel)]="user.togglToken">
-    </mat-form-field>
-  </div>
+  <app-user-form [userForm]="userForm"></app-user-form>
 </div>
 
 <div mat-dialog-actions>
