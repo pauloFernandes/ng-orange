@@ -13,10 +13,10 @@
     <mat-card-content>
       <app-user-expansion-panel
         appDebounceClick
-        (toggleUserActive)="update($event)"
+        *ngFor="let user of users | async"
         (onSave)="update($event)"
         (onRemove)="confirmRemove($event)"
-        *ngFor="let user of users | async"
+        (toggleUserActive)="update($event)"
         [user]="user">
       </app-user-expansion-panel>
     </mat-card-content>

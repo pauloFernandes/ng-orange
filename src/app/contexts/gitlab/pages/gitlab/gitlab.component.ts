@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import GitlabProject from 'src/app/shared/interfaces/GitlabProject';
-import { GitlabService } from '../../shared/gitlab.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 import { MatDialog } from '@angular/material';
-import { NewProjectDialogComponent } from '../../components/new-project-dialog/new-project-dialog.component';
 import { DeleteProjectDialogComponent } from '../../components/delete-project-dialog/delete-project-dialog.component';
+import { NewProjectDialogComponent } from '../../components/new-project-dialog/new-project-dialog.component';
+import GitlabProject from 'src/app/shared/interfaces/GitlabProject';
+import { GitlabService } from '../../shared/gitlab.service';
 
 @Component({
   selector: 'app-gitlab',
