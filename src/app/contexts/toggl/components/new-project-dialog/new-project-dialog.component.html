@@ -1,0 +1,9 @@
+<h2 mat-dialog-title>Novo Projeto</h2>
+<div mat-dialog-content>
+  <app-toggl-form [projectForm]="projectForm"></app-toggl-form>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button cdkFocusInitial [mat-dialog-close]="data">Cancelar</button>
+  <button mat-button [mat-dialog-close]="data" (click)="onClick()">Ok</button>
+</div>
