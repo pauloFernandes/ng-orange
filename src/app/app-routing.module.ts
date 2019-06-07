@@ -14,6 +14,10 @@ const routes: Routes = [
     path: 'users/:userId/toggl',
     loadChildren: () => import('./contexts/toggl/toggl.module').then(mod => mod.TogglModule)
   },
+  {
+    path: 'users/:userId/channels',
+    loadChildren: () => import('./contexts/channels/channels.module').then(mod => mod.ChannelsModule)
+  },
 
 ];
 

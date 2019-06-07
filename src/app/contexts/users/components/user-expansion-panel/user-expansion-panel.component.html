@@ -27,7 +27,7 @@
     <button mat-button mat-raised-button  [matMenuTriggerFor]="menu">Opções</button>
     <mat-menu #menu="matMenu">
       <a [routerLink]="'/users/' + user.key + '/toggl'" mat-menu-item>Toggl</a>
-      <a [routerLink]="'/users/' + user.key + '/slack'" mat-menu-item>Slack</a>
+      <a [routerLink]="'/users/' + user.key + '/channels'" mat-menu-item>Canais</a>
       <a [routerLink]="'/users/' + user.key + '/gitlab'" mat-menu-item>Gitlab</a>
     </mat-menu>
   </div>

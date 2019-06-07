@@ -1,0 +1,11 @@
+<form [formGroup]="slackForm">
+  <mat-form-field class="full-sized-input">
+    <input matInput placeholder="Slack" formControlName="channel">
+  </mat-form-field>
+
+  <button
+    (click)="onSaveClicked()"
+    mat-raised-button
+    [color]="'primary'"
+  >Salvar</button>
+</form>
