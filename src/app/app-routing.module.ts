@@ -3,6 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: 'observables',
+    loadChildren: () => import('./contexts/observables/observables.module').then(mod => mod.ObservablesModule)
+  },
+  {
+    path: 'tricky-games',
+    loadChildren: () => import('./contexts/tricky-games/tricky-games.module').then(mod => mod.TrickyGamesModule)
+  },
+
+  {
     path: 'users',
     loadChildren: () => import('./contexts/users/users.module').then(mod => mod.UsersModule)
   },

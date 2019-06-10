@@ -1,4 +1,11 @@
-<mat-toolbar [color]="'primary'" [class.mat-elevation-z6]="true">Orange</mat-toolbar>
+<mat-toolbar [color]="'primary'" [class.mat-elevation-z6]="true">
+  Orange
+  <div class="menu">
+    <button [routerLink]="'/users'" mat-button>Users</button>
+    <button [routerLink]="'/observables'" mat-button>Observables</button>
+    <button [routerLink]="'/tricky-games'" mat-button>Tricky Games</button>
+  </div>
+</mat-toolbar>
 <div class="basic-container">
   <router-outlet></router-outlet>
 </div>

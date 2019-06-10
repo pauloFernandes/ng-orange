@@ -1,0 +1,30 @@
+<div class="header">
+  <h2>Parent-child reference sharing</h2>
+</div>
+<div class="explanation">
+  <ul>
+    <li>Componentes pai e filho compartilham, via <code>@input</code> da um objeto</li>
+    <li>Mudanças de propriedades por parte de pai e filho são refletidas nos dois componentes</li>
+    <li>Mudanças da referência por parte do pai refletem nos dois componentes</li>
+    <li>Mudança da referência por parte do filho "estragam" o input</li>
+  </ul>
+</div>
+<div class="tricky-game">
+    <mat-card class="tricky-game-card" [class.mat-elevation-z4]="true">
+      <mat-card-content>
+        <div class="parent">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="current value in parent is" [(ngModel)]="counter.currentIndex">
+          </mat-form-field>
+          <br />
+          <button mat-button (click)="smartReset()" [class.mat-elevation-z2]="true">🤘</button>
+          <h2>current value in parent is {{ counter.currentIndex }}</h2>
+        </div>
+
+        <app-child-counter [counter]="counter"></app-child-counter>
+
+      </mat-card-content>
+      <mat-card-actions>
+      </mat-card-actions>
+    </mat-card>
+</div>
