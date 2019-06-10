@@ -9,9 +9,10 @@ import { FormsModule } from '@angular/forms';
 import { DiHierarchyComponent } from './pages/di-hierarchy/di-hierarchy.component';
 import { DiChildComponent } from './components/di-child/di-child.component';
 import { MainComponent } from './pages/main/main.component';
+import { NotStartedObservableComponent } from './pages/not-started-observable/not-started-observable.component';
 
 @NgModule({
-  declarations: [ParentChildReferenceComponent, ChildCounterComponent, DiHierarchyComponent, DiChildComponent, MainComponent],
+  declarations: [ParentChildReferenceComponent, ChildCounterComponent, DiHierarchyComponent, DiChildComponent, MainComponent, NotStartedObservableComponent],
   imports: [
     CommonModule,
     TrickyGamesRoutingModule,

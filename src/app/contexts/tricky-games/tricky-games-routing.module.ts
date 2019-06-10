@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ParentChildReferenceComponent } from './pages/parent-child-reference/parent-child-reference.component';
 import { DiHierarchyComponent } from './pages/di-hierarchy/di-hierarchy.component';
 import { MainComponent } from './pages/main/main.component';
+import { NotStartedObservableComponent } from './pages/not-started-observable/not-started-observable.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'di-hierarchy',
     component: DiHierarchyComponent
+  },
+  {
+    path: 'not-started-observable',
+    component: NotStartedObservableComponent
   }
 ];
 
