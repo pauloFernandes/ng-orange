@@ -6,9 +6,12 @@ import { ParentChildReferenceComponent } from './pages/parent-child-reference/pa
 import { ThemingModule } from 'src/app/shared/theming/theming.module';
 import { ChildCounterComponent } from './components/child-counter/child-counter.component';
 import { FormsModule } from '@angular/forms';
+import { DiHierarchyComponent } from './pages/di-hierarchy/di-hierarchy.component';
+import { DiChildComponent } from './components/di-child/di-child.component';
+import { MainComponent } from './pages/main/main.component';
 
 @NgModule({
-  declarations: [ParentChildReferenceComponent, ChildCounterComponent],
+  declarations: [ParentChildReferenceComponent, ChildCounterComponent, DiHierarchyComponent, DiChildComponent, MainComponent],
   imports: [
     CommonModule,
     TrickyGamesRoutingModule,

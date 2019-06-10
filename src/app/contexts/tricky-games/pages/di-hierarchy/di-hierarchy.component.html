@@ -1,0 +1,22 @@
+<div class="header">
+  <h2>Dependency injection Hierarchy</h2>
+</div>
+
+<div class="explanation">
+  <ul>
+    <li>Instâncias de serviços injetados são criados a nível de componente</li>
+    <li>Dependências "provided" pelo parent são compartilhadas pelo filho</li>
+    <li>Componentes irmãos que registram a própria dependência possuem suas próprias instâncias, mas compartilham instâncias do pai</li>
+  </ul>
+</div>
+
+<div class="tricky-games">
+  <mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile>
+      <app-di-child></app-di-child>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <app-di-child></app-di-child>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
