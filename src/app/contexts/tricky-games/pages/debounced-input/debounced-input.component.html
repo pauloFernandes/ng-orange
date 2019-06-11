@@ -1,0 +1,30 @@
+<div class="header">
+    <h2>Debounced input</h2>
+  </div>
+  <div class="explanation">
+    <ul>
+      <li>Demonstração da utilização de streams com RxJS</li>
+      <li>Exemplo de utilização dos operadores do RxJS para criação de um input debounced.</li>
+      <li>o checkbox demonstra como streams podem ser combinadas</li>
+    </ul>
+  </div>
+  <div class="tricky-game">
+    <mat-card class="tricky-game-card" [class.mat-elevation-z4]="true">
+      <mat-card-content>
+        <mat-grid-list cols="2" rowHeight="2:1">
+          <mat-checkbox class="example-margin" [(ngModel)]="shouldDebounce">Debounce</mat-checkbox>
+          <mat-grid-tile>
+            <mat-form-field class="full-sized-input">
+              <input matInput placeholder="Digite aqui a senha" #debouncedInput>
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <h1>{{ output }}</h1>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card-content>
+      <mat-card-actions>
+        <h2 class="password">{{ phrase }}</h2>
+      </mat-card-actions>
+    </mat-card>
+  </div>

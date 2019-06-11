@@ -10,21 +10,22 @@
   </ul>
 </div>
 <div class="tricky-game">
-    <mat-card class="tricky-game-card" [class.mat-elevation-z4]="true">
-      <mat-card-content>
-        <div class="parent">
-          <mat-form-field class="example-full-width">
-            <input matInput placeholder="current value in parent is" [(ngModel)]="counter.currentIndex">
-          </mat-form-field>
-          <br />
-          <button mat-button (click)="smartReset()" [class.mat-elevation-z2]="true">🤘</button>
-          <h2>current value in parent is {{ counter.currentIndex }}</h2>
-        </div>
+  <mat-card class="tricky-game-card" [class.mat-elevation-z4]="true">
+    <mat-card-content>
+      <pre>{{ counter | json }}</pre>
+      <div class="parent">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="current value in parent is" [(ngModel)]="counter.currentIndex">
+        </mat-form-field>
+        <br />
+        <button mat-button (click)="smartReset()" [class.mat-elevation-z2]="true">🤘</button>
+        <h2>current value in parent is {{ counter.currentIndex }}</h2>
+      </div>
 
-        <app-child-counter [counter]="counter"></app-child-counter>
+      <app-child-counter [counter]="counter"></app-child-counter>
 
-      </mat-card-content>
-      <mat-card-actions>
-      </mat-card-actions>
-    </mat-card>
+    </mat-card-content>
+    <mat-card-actions>
+    </mat-card-actions>
+  </mat-card>
 </div>

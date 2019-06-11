@@ -10,9 +10,10 @@ import { DiHierarchyComponent } from './pages/di-hierarchy/di-hierarchy.componen
 import { DiChildComponent } from './components/di-child/di-child.component';
 import { MainComponent } from './pages/main/main.component';
 import { NotStartedObservableComponent } from './pages/not-started-observable/not-started-observable.component';
+import { DebouncedInputComponent } from './pages/debounced-input/debounced-input.component';
 
 @NgModule({
-  declarations: [ParentChildReferenceComponent, ChildCounterComponent, DiHierarchyComponent, DiChildComponent, MainComponent, NotStartedObservableComponent],
+  declarations: [ParentChildReferenceComponent, ChildCounterComponent, DiHierarchyComponent, DiChildComponent, MainComponent, NotStartedObservableComponent, DebouncedInputComponent],
   imports: [
     CommonModule,
     TrickyGamesRoutingModule,

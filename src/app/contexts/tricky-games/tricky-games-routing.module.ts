@@ -4,6 +4,7 @@ import { ParentChildReferenceComponent } from './pages/parent-child-reference/pa
 import { DiHierarchyComponent } from './pages/di-hierarchy/di-hierarchy.component';
 import { MainComponent } from './pages/main/main.component';
 import { NotStartedObservableComponent } from './pages/not-started-observable/not-started-observable.component';
+import { DebouncedInputComponent } from './pages/debounced-input/debounced-input.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'not-started-observable',
     component: NotStartedObservableComponent
+  },
+  {
+    path: 'debounced-input',
+    component: DebouncedInputComponent
   }
 ];
 
