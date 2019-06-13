@@ -1,7 +1,7 @@
 <mat-card class="tricky-game-card" [class.mat-elevation-z4]="true">
   <mat-card-content>
-    <h2>local counter: {{ counter.getIndex() }}</h2>
     <h2>parent counter: {{ parentCounter.getIndex() }}</h2>
+    <h2>local counter: {{ counter.getIndex() }}</h2>
     <button mat-button (click)="decrement()" [class.mat-elevation-z2]="true">-</button>
     <button mat-button (click)="increment()" [class.mat-elevation-z2]="true">+</button>
   </mat-card-content>

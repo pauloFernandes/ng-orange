@@ -12,7 +12,16 @@
     <mat-card class="tricky-game-card" [class.mat-elevation-z4]="true">
       <mat-card-content>
         <mat-grid-list cols="2" rowHeight="2:1">
-          <mat-checkbox class="example-margin" [(ngModel)]="shouldDebounce">Debounce</mat-checkbox>
+          <mat-checkbox
+            class="example-margin"
+            #subscribed
+            (change)="toggleSubscription(subscribed.checked)"
+          >
+            subscribe
+          </mat-checkbox>
+          <br />
+          <mat-checkbox class="example-margin" [(ngModel)]="shouldDebounce">debounce</mat-checkbox>
+
           <mat-grid-tile>
             <mat-form-field class="full-sized-input">
               <input matInput placeholder="Digite aqui a senha" #debouncedInput>
@@ -21,6 +30,7 @@
           <mat-grid-tile>
             <h1>{{ output }}</h1>
           </mat-grid-tile>
+
         </mat-grid-list>
       </mat-card-content>
       <mat-card-actions>

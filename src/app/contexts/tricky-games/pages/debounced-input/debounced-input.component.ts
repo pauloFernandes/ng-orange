@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef, OnDestroy } from '@angular/core';
-import { fromEvent, merge, Subscription } from 'rxjs';
+import { fromEvent, merge, Subscription, Observable } from 'rxjs';
 import { map, debounceTime, distinctUntilChanged, filter } from 'rxjs/operators';
 
 @Component({
@@ -12,6 +12,7 @@ export class DebouncedInputComponent implements OnInit, OnDestroy {
   @ViewChild('debouncedInput') debouncedInput:ElementRef;
   output:string
   shouldDebounce:boolean = true;
+  globalObservable: Observable<any>;
   globalSubscription:Subscription;
   constructor() { }
 
@@ -20,7 +21,7 @@ export class DebouncedInputComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.globalSubscription.unsubscribe();
+    this.unsubscribe();
   }
 
   registerDebounceObservables() {
@@ -36,11 +37,28 @@ export class DebouncedInputComponent implements OnInit, OnDestroy {
       map((ev:any) => ev.target.value),
     );
 
-    this.globalSubscription = merge(
+    this.globalObservable = merge(
       shouldDebounce$,
       debouce$,
-    ).subscribe(
-      query => this.output = query
-    );
+    )
+  }
+
+  toggleSubscription(checked) {
+    return checked ?
+      this.subscribe() :
+      this.unsubscribe()
+    ;
+  }
+
+  subscribe() {
+    this.globalSubscription = this.globalObservable
+      .subscribe(query => this.output = query)
+    ;
+  }
+
+  unsubscribe() {
+    if (!this.globalSubscription.closed) {
+      this.globalSubscription.unsubscribe();
+    }
   }
 }

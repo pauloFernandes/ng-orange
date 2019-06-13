@@ -10,7 +10,4 @@ import { ParentCounterService } from '../../shared/parent-counter.service';
 })
 export class DiHierarchyComponent {
   constructor(private counter:Countable) {}
-
-  increment() { this.counter.increment() }
-  decrement() { this.counter.decrement() }
 }
